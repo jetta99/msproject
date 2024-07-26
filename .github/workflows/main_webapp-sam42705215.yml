@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - webapp-sam42705215
+name: Build and deploy ASP.Net Core app to Azure Web App - webapp-sam42704573
 
 on:
   push:
@@ -12,7 +12,6 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -47,20 +46,19 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: .net-app
-          path: ${{env.GITHUB_WORKSPACE}}\myapp
       
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_DF6BB44467334CFB96DC99BC5CCB3217 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1DFAC1B5C6F94C1D8B226DA53746E27A }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_96E8462ED11849629ED933CA97BC2EB6 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_5C21F1E0B43D4AEDBFABD8F3BB822251 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_BBD8BAF5BABD47CD89D1434294DAEBDD }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_17DE77BAA1A34E3A9E630BD418271302 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'webapp-sam42705215'
+          app-name: 'webapp-sam42704573'
           slot-name: 'Production'
           package: .
           
